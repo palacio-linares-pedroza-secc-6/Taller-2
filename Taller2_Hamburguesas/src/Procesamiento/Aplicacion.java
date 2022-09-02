@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class Aplicacion {
 	
-	public void ejecutarAplicacion()
+	public static void ejecutarAplicacion()
 	{
 		System.out.println("Pedidos El Corral\n");
 
@@ -16,8 +16,14 @@ public class Aplicacion {
 			try
 			{
 				mostrarMenu();
-				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
-				if (opcion_seleccionada == 1)
+				System.out.println("Seleccione una opcion:");
+				int opcion_seleccionada = Integer.parseInt(System.console().readLine());
+				
+				if (opcion_seleccionada <= 0 || opcion_seleccionada > 5)	
+				System.out.println("Ingrese una opcion valida");
+				mostrarMenu()
+				
+				else if (opcion_seleccionada == 1)
 					
 				else if (opcion_seleccionada == 2)
 					
@@ -26,6 +32,8 @@ public class Aplicacion {
 				else if (opcion_seleccionada == 4)
 					
 				else if (opcion_seleccionada == 5)
+					
+				else if (opcion_seleccionada != )
 					
 				// falta investigar como hacer un input
 					
@@ -52,9 +60,12 @@ public class Aplicacion {
 		File archivoIngredientes = new File("data/ingredientes.txt");
 		File archivoMenu = new File("data/menu.txt");
 		File archivoCombos = new File("data/combos.txt");
-		restaurante.cargarInformacionRestaurante(archivoIngredientes,archivoMenu,archivoCombos);
-		restaurante.getProductoUno();
-		//aplicacion.ejecutarAplicacion();
+		File archivoBebidas = new File("data/bebidas.txt");
+		File archivoAcompanamientos = new File("data/acompanamientos.txt");
+		
+		
+		restaurante.cargarInformacionRestaurante(archivoIngredientes,archivoMenu,archivoCombos,archivoBebidas,archivoAcompanamientos);
+		//ejecutarAplicacion();
 	}
 	
 	

@@ -1,16 +1,16 @@
 package Modelo;
 
-public class ProductoMenu implements Producto{
-	
-    private String nombre;
+public class Bebida implements Producto{
+
+	private String nombre;
     private int precioBase;
     private int calorias;
 
-    public ProductoMenu (String nombre, int precioBase, int calorias) {
+    public Bebida (String nombre, int precioBase, int calorias) {
         this.nombre=nombre;
         this.precioBase=precioBase;
         this.calorias=calorias;
-
+        
     }
     public String getNombre() {
         return nombre;
@@ -25,5 +25,6 @@ public class ProductoMenu implements Producto{
     
     public String generarTextoFactura() {
     	return("nombre precio \n");
-}
+    }
+    
 }
